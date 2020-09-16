@@ -27,7 +27,7 @@ public class Signup extends AppCompatActivity {
         });
 
         btnmovetoCHOICE=findViewById(R.id.btn4);
-        btnmovetologin.setOnClickListener(new View.OnClickListener() {
+        btnmovetoCHOICE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
