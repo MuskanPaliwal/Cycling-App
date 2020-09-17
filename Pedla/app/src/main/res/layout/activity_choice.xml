@@ -10,10 +10,10 @@
 
     <TextView
         android:id="@+id/textGrid"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="What Do You Want To Be!"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -23,26 +23,30 @@
 
     <GridLayout
         android:id="@+id/mainGrid"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textGrid"
-        android:layout_marginTop="0dp"
-        android:columnCount="1"
-        android:columnOrderPreserved="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="20dp"
+
+        android:layout_weight="8"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
         android:padding="14dp"
         android:rowCount="1">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="300dp"
             android:layout_margin="10dp"
             app:cardCornerRadius="9dp"
             app:cardElevation="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="match_parent"
                 android:background="#C3EDEDED"
                 android:orientation="vertical"
                 android:padding="15dp">
@@ -50,19 +54,17 @@
 
                 <ImageView
                     android:id="@+id/featured_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:layout_row="0"
-                    android:layout_column="0"
+                    android:layout_width="132dp"
+                    android:layout_height="125dp"
                     android:layout_gravity="center|center_horizontal|center_vertical"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="40dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/rider" />
 
                 <TextView
                     android:id="@+id/featured_user1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="104dp"
+                    android:layout_height="44dp"
                     android:layout_row="0"
                     android:layout_column="0"
                     android:layout_gravity="center"
@@ -73,7 +75,7 @@
                     android:text="Rider"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/antic" />
 
@@ -82,15 +84,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="300dp"
             android:layout_margin="10dp"
             app:cardCornerRadius="9dp"
             app:cardElevation="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="match_parent"
                 android:background="#C3EDEDED"
                 android:orientation="vertical"
                 android:padding="15dp">
@@ -98,21 +100,19 @@
 
                 <ImageView
                     android:id="@+id/featured_image2"
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:layout_row="0"
-                    android:layout_column="1"
+                    android:layout_width="132dp"
+                    android:layout_height="125dp"
                     android:layout_gravity="center|center_horizontal|center_vertical"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="40dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/merchant" />
 
                 <TextView
                     android:id="@+id/featured_user2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="133dp"
+                    android:layout_height="44dp"
                     android:layout_row="0"
-                    android:layout_column="1"
+                    android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/bungee"
@@ -121,7 +121,7 @@
                     android:text="Merchant"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/antic" />
 
