@@ -36,8 +36,5 @@ public class Choice extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
     }
 }

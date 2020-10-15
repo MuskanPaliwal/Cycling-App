@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (moveToHomeScreen()) {
-                    Intent intent=new Intent (Login.this,HS.class);
+                    Intent intent=new Intent (Login.this,SideBar.class);
                     startActivity(intent);
                     finish();
                 }
