@@ -14,10 +14,6 @@
             android:label="@string/title_activity_side_bar"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".NavBarSide"
-            android:label="@string/title_activity_nav_bar_side"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
             android:name=".Choice"
             android:theme="@style/AppTheme.RemoveActionBar" />
         <activity android:name=".HS" />

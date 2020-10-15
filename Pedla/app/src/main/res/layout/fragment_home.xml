@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/text_home"
@@ -15,6 +16,7 @@
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:textSize="20sp"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +33,7 @@
         android:layout_marginRight="174dp"
         android:layout_marginBottom="97dp"
         android:text="Hello Rider"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/text_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
