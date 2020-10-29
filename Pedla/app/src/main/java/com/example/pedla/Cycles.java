@@ -27,7 +27,7 @@ public class Cycles extends AppCompatActivity {
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent (Cycles.this,HS.class);
+                Intent intent=new Intent (Cycles.this,Accessories.class);
                 startActivity(intent);
                 finish();
             }
@@ -36,7 +36,7 @@ public class Cycles extends AppCompatActivity {
         card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent (Cycles.this,HS.class);
+                Intent intent=new Intent (Cycles.this,Accessories.class);
                 startActivity(intent);
                 finish();
             }
@@ -45,7 +45,7 @@ public class Cycles extends AppCompatActivity {
         card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent (Cycles.this,HS.class);
+                Intent intent=new Intent (Cycles.this,Accessories.class);
                 startActivity(intent);
                 finish();
             }
@@ -54,7 +54,7 @@ public class Cycles extends AppCompatActivity {
         card4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent (Cycles.this,HS.class);
+                Intent intent=new Intent (Cycles.this,Accessories.class);
                 startActivity(intent);
                 finish();
             }
@@ -63,7 +63,7 @@ public class Cycles extends AppCompatActivity {
         card5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent (Cycles.this,HS.class);
+                Intent intent=new Intent (Cycles.this,Accessories.class);
                 startActivity(intent);
                 finish();
             }
