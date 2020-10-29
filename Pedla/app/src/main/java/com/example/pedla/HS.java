@@ -1,6 +1,5 @@
 package com.example.pedla;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
@@ -8,7 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 public class HS extends AppCompatActivity {
     private Button btnbacktologin;
     private Button btnToggleDark;
+    private Button btntoaccessories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,13 @@ public class HS extends AppCompatActivity {
                 backToSignInpage();
             }
         });
-
+        btntoaccessories = findViewById(R.id.btn7);
+        btntoaccessories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAccessoriesInpage();
+            }
+        });
         btnToggleDark
                 = findViewById(R.id.btn6);
 
@@ -139,13 +145,30 @@ public class HS extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.setp:
+                Intent i = new Intent(HS.this, Preference.class);
+                startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void backToSignInpage(){
         Intent intent=new Intent (HS.this,SideBar.class);
         startActivity(intent);
         finish();
     }
-
-
+    private void goToAccessoriesInpage(){
+        Intent intent=new Intent (HS.this,Accessories.class);
+        startActivity(intent);
+        finish();
+    }
 
 }
