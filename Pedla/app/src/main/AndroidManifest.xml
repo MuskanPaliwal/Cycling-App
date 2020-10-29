@@ -9,15 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OrderReview"></activity>
+        <activity android:name=".Accessories" />
         <activity
             android:name=".SideBar"
             android:label="@string/title_activity_side_bar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Choice"
             android:theme="@style/AppTheme.RemoveActionBar" />
         <activity android:name=".HS" />
-        <activity android:name=".Preference"/>
+        <activity android:name=".Preference" />
         <activity
             android:name=".Signup"
             android:theme="@style/AppTheme.RemoveActionBar" />
@@ -33,6 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

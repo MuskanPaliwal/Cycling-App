@@ -15,5 +15,6 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_nav_bar_side">NavBarSide</string>
     <string name="title_activity_side_bar">SideBar</string>
+    <string name="add_accessories">Add Accessories</string>
 
 </resources>

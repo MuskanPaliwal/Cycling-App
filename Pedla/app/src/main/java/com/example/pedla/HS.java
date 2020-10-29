@@ -18,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 public class HS extends AppCompatActivity {
     private Button btnbacktologin;
     private Button btnToggleDark;
+    private Button btntoaccessories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,13 @@ public class HS extends AppCompatActivity {
                 backToSignInpage();
             }
         });
-
+        btntoaccessories = findViewById(R.id.btn7);
+        btntoaccessories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAccessoriesInpage();
+            }
+        });
         btnToggleDark
                 = findViewById(R.id.btn6);
 
@@ -155,6 +162,11 @@ public class HS extends AppCompatActivity {
     }
     private void backToSignInpage(){
         Intent intent=new Intent (HS.this,Login.class);
+        startActivity(intent);
+        finish();
+    }
+    private void goToAccessoriesInpage(){
+        Intent intent=new Intent (HS.this,Accessories.class);
         startActivity(intent);
         finish();
     }
