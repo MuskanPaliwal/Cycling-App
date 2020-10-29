@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pedla">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Cycles"></activity>
+        <activity android:name=".Stores" />
         <activity
             android:name=".SideBar"
             android:label="@string/title_activity_side_bar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Choice"
             android:theme="@style/AppTheme.RemoveActionBar" />
-        <activity android:name=".HS" />
+        <activity
+            android:name=".HS"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Signup"
             android:theme="@style/AppTheme.RemoveActionBar" />
