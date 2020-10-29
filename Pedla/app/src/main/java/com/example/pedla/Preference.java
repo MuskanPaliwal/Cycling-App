@@ -27,7 +27,7 @@ public class Preference extends PreferenceActivity{
             getListView().setBackgroundColor(Color.parseColor("#ffffff"));
         }
 
-        CheckBoxPreference check_night_instant = (CheckBoxPreference)findPreference("NIGHT");
+//        CheckBoxPreference check_night_instant = (CheckBoxPreference)findPreference("NIGHT");
 
     }
 }

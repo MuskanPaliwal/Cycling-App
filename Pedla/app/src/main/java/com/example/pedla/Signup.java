@@ -45,7 +45,7 @@ public class Signup extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (moveTohomescreen()) {
-                    Intent intent=new Intent (Signup.this,HS.class);
+                    Intent intent=new Intent (Signup.this,SideBar.class);
                     startActivity(intent);
                     finish();
                 }
