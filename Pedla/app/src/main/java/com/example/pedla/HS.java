@@ -161,7 +161,7 @@ public class HS extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     private void backToSignInpage(){
-        Intent intent=new Intent (HS.this,Login.class);
+        Intent intent=new Intent (HS.this,SideBar.class);
         startActivity(intent);
         finish();
     }

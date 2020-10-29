@@ -102,7 +102,7 @@ public class Signup extends AppCompatActivity {
     }
     private void AlertDialog()
     {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Signup.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Signup.this,R.style.AlertDialogue);
         alertDialogBuilder.setMessage("Please ensure All The Fields Are Correct").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int id)
