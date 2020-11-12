@@ -42,8 +42,7 @@ public class Accessories extends AppCompatActivity {
 
         listView = (ListView)findViewById(R.id.list);
         textView = (TextView)findViewById(R.id.textView);
-        final ArrayAdapter adapter = new ArrayAdapter(this,
-                R.layout.list_item, R.id.textView, festivals);
+        final ArrayAdapter adapter = new ArrayAdapter(this, R.layout.list_item, R.id.textView, festivals);
 
         listView.setAdapter(adapter);
 
