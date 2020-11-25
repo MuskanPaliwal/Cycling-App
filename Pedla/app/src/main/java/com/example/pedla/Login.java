@@ -39,7 +39,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                moveToHomeScreen();
+                if (moveToHomeScreen()) {
+                    Intent intent=new Intent (Login.this,SideBar.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    AlertDialog();
+                }
             }
         });
     }
@@ -54,5 +61,15 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    private void AlertDialog()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Login.this,R.style.AlertDialogue);
+        alertDialogBuilder.setMessage("Please Ensure all the fields are correct").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int id)
+            {
+                dialog.cancel();
+            }
+        });
 
 }

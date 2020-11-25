@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pedla">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,11 +15,32 @@
         android:theme="@style/AppTheme">
         <activity android:name=".BookSuccessfull"></activity>
         <activity android:name=".Payment"></activity>
-        <activity android:name=".Choice" />
-        <activity android:name=".HS" />
-        <activity android:name=".Signup" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Cycles"></activity>
+        <activity android:name=".Stores" />
+        <activity android:name=".OrderReview"></activity>
+        <activity android:name=".Accessories" />
+
+        <activity
+            android:name=".SideBar"
+            android:label="@string/title_activity_side_bar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Choice"
+            android:theme="@style/AppTheme.RemoveActionBar" />
+        <activity
+            android:name=".HS"
+            android:theme="@style/AppTheme" />
+   
+        <activity android:name=".Preference" />
+        <activity
+            android:name=".Signup"
+            android:theme="@style/AppTheme.RemoveActionBar" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppTheme.RemoveActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.RemoveActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
