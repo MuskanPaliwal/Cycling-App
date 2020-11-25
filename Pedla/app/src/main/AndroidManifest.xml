@@ -14,12 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BookSuccessfull"></activity>
-        <activity android:name=".Payment"></activity>
-        <activity android:name=".Cycles"></activity>
+        <activity android:name=".Payment" />
+        <activity android:name=".Cycles" />
         <activity android:name=".Stores" />
-        <activity android:name=".OrderReview"></activity>
+        <activity android:name=".OrderReview" />
         <activity android:name=".Accessories" />
-
         <activity
             android:name=".SideBar"
             android:label="@string/title_activity_side_bar"
@@ -30,7 +29,6 @@
         <activity
             android:name=".HS"
             android:theme="@style/AppTheme" />
-   
         <activity android:name=".Preference" />
         <activity
             android:name=".Signup"

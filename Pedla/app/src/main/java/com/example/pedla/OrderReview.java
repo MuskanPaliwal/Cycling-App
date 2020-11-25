@@ -23,7 +23,7 @@ public class OrderReview extends AppCompatActivity {
         });
     }
     private void goToPaymentPage(){
-        Intent intent=new Intent (OrderReview.this,HS.class);
+        Intent intent=new Intent (OrderReview.this,Payment.class);
         startActivity(intent);
         finish();
     }

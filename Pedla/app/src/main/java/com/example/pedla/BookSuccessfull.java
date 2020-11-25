@@ -22,7 +22,7 @@ public class BookSuccessfull extends AppCompatActivity {
         });
     }
     public void moveToHome(){
-        Intent intent=new Intent (BookSuccessfull.this,HS.class);
+        Intent intent=new Intent (BookSuccessfull.this,SideBar.class);
         startActivity(intent);
         finish();
     }
