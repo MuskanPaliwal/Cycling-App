@@ -1,34 +1,21 @@
 package com.example.pedla;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
     private Button btnmovetologin;
     private Button btnmovetoCHOICE;
-    private EditText Name, Email, Password, Phone,ConfirmPass;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
-
-        Name=(EditText)findViewById(R.id.editTextTextPerson);
-        Email=(EditText)findViewById(R.id.editTextTextEmail);
-        Password=(EditText)findViewById(R.id.editTextTextPassword);
-        Phone=(EditText)findViewById(R.id.editTextTextPersonName);
-        ConfirmPass=(EditText)findViewById(R.id.editTextTextPasswordType) ;
-
 
         btnmovetologin=findViewById(R.id.btn3);
         btnmovetologin.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +27,7 @@ public class Signup extends AppCompatActivity {
         });
 
         btnmovetoCHOICE=findViewById(R.id.btn4);
-        btnmovetoCHOICE.setOnClickListener(new View.OnClickListener() {
+        btnmovetologin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -54,8 +41,6 @@ public class Signup extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void moveToSignInpage(){
