@@ -46,7 +46,6 @@ public class MyStoreAdapter extends RecyclerView.Adapter<MyStoreAdapter.ViewHold
             public void onClick(View v) {
                 Intent intent=new Intent(context, Cycles.class);
                 context.startActivity(intent);
-
             }
         });
 

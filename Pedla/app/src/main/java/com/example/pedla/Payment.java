@@ -7,23 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class OrderReview extends AppCompatActivity {
-    private Button btnToPayAmount;
+public class Payment extends AppCompatActivity {
+    private Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_review);
-        btnToPayAmount=findViewById(R.id.buttonPay);
-        btnToPayAmount.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_payment);
+        btn=findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                goToPaymentPage();
+                moveToBookSuccessfull();
             }
         });
     }
-    private void goToPaymentPage(){
-        Intent intent=new Intent (OrderReview.this,Payment.class);
+    public void moveToBookSuccessfull(){
+        Intent intent=new Intent (Payment.this,BookingSuccessfull.class);
         startActivity(intent);
         finish();
     }
