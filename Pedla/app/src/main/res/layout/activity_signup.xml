@@ -23,8 +23,8 @@
 
         <TextView
             android:id="@+id/logo_name"
-            android:layout_width="368dp"
-            android:layout_height="61dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/bungee"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="Welcome To Pedla"
@@ -34,8 +34,8 @@
 
         <TextView
             android:id="@+id/slogan_name"
-            android:layout_width="372dp"
-            android:layout_height="29dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="9dp"
             android:gravity="center|center_horizontal|center_vertical"
@@ -46,7 +46,8 @@
         <EditText
             android:id="@+id/editTextTextPerson"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:hint="Username"
@@ -58,7 +59,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
@@ -71,7 +72,7 @@
         <EditText
             android:id="@+id/editTextTextEmail"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
@@ -84,11 +85,11 @@
         <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Enter Password"
             android:inputType="textPassword"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
@@ -97,11 +98,11 @@
         <EditText
             android:id="@+id/editTextTextPasswordType"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="30dp"
             android:ems="10"
-            android:hint="Enter Password"
+            android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"

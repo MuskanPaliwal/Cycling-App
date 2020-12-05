@@ -1,12 +1,15 @@
 
 package com.example.pedla;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -18,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN=5000;
 
     //Variables
-
-    Animation topanim, bottomanim;
+ Animation topanim, bottomanim;
     ImageView image;
     TextView logo,slogan;
 
@@ -50,4 +52,5 @@ public class MainActivity extends AppCompatActivity {
             }
         },SPLASH_SCREEN);
     }
+
 }
