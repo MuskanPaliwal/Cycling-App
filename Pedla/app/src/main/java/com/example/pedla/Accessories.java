@@ -1,7 +1,6 @@
 package com.example.pedla;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -41,8 +40,10 @@ public class Accessories extends AppCompatActivity {
 
         listView = (ListView)findViewById(R.id.list);
         textView = (TextView)findViewById(R.id.textView);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                R.layout.list_item, R.id.textView, festivals);
+
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item, R.id.textView, festivals);
+
+
 
         listView.setAdapter(adapter);
 

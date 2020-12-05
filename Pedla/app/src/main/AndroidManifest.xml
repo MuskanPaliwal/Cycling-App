@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Payment"></activity>
-        <activity android:name=".BookSuccessfull" />
+        <activity android:name=".BookingSuccessfull"></activity>
+        <activity android:name=".Payment" />
         <activity android:name=".Cycles" />
         <activity android:name=".Stores" />
         <activity android:name=".OrderReview" />
