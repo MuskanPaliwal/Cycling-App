@@ -144,7 +144,7 @@ public class HS extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.setp:
@@ -152,7 +152,7 @@ public class HS extends AppCompatActivity {
                 startActivity(i);
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
     private void backToSignInpage(){
         Intent intent=new Intent (HS.this,SideBar.class);
         startActivity(intent);

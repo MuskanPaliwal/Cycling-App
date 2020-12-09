@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutApp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="373dp"
+            android:layout_height="221dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="PEDAL To Break Limits"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:id="@+id/pedla1"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutapp1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Pedla is a simple cycle-renting app."
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutapp2"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="You can find the best and trusted cycle stores here."
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutapp3"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Getting a cycle is just a click away"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutapp4"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Book your cycle as well as accessories from this app"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutapp5"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="This is the first version of Pedla"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutapp6"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Enjoy your ride!"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btaa"
+            android:text="Home"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:background="#fece2f"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
