@@ -5,6 +5,9 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.preference.ListPreference;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,19 +17,27 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
+
 /*import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pedla.HS;
 */
+import com.example.pedla.AboutApp;
 import com.example.pedla.Choice;
+import com.example.pedla.CovidRules;
+
 import com.example.pedla.Login;
 import com.example.pedla.R;
 /*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -48,7 +59,12 @@ import static android.app.Activity.RESULT_OK;
 
 public class HomeFragment extends Fragment  {
 
+    private CardView cardView1;
+
+    private CardView cardView2;
     private HomeViewModel homeViewModel;
+    LinearLayout ml;
+    private TextView t1;
     TextView tvdate;
     EditText etdate;
     EditText etdate2;
@@ -61,12 +77,10 @@ public class HomeFragment extends Fragment  {
     EditText editText;
     TextView textView1;
     private Button btntostore;
-   /* Button btnpicker;
-    TextView location;
-    TextView name,longitude;
-    int PLACE_PICKER_REQUEST=1;*/
-
-
+    /* Button btnpicker;
+     TextView location;
+     TextView name,longitude;
+     int PLACE_PICKER_REQUEST=1;*/
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -81,6 +95,14 @@ public class HomeFragment extends Fragment  {
                 textView.setText(s);
             }
         });*/
+
+        ml=root.findViewById(R.id.hsLayout);
+        t1=root.findViewById(R.id.tv_1);
+
+
+        cardView1=root.findViewById(R.id.card11);
+        cardView2=root.findViewById(R.id.card22);
+
         tvdate=root.findViewById(R.id.tv_date);
         etdate=root.findViewById(R.id.et_date);
         etdate2=root.findViewById(R.id.et_date2);
@@ -108,21 +130,36 @@ public class HomeFragment extends Fragment  {
         final int day1= calender.get(Calendar.DAY_OF_MONTH);
 
 
-        Places.initialize(HomeFragment.this.getContext(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
+        cardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), CovidRules.class);
+                startActivity(intent);
+            }
+        });
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), AboutApp.class);
+                startActivity(intent);
+            }
+        });
+        Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
 
         editText.setFocusable(false);
 
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List <Place.Field> fieldList= Arrays.asList(Place.Field.ADDRESS,
+                List<Place.Field> fieldList= Arrays.asList(Place.Field.ADDRESS,
                         Place.Field.NAME);
                 Intent intent=new Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN,
-                        fieldList).build(HomeFragment.this.getContext());
+                        fieldList).build(HomeFragment.this.getActivity());
 
                 startActivityForResult(intent,100);
             }
         });
+
 
         btntostore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,7 +186,6 @@ public class HomeFragment extends Fragment  {
 
             }
         });
-
 
         etdate2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,7 +227,6 @@ public class HomeFragment extends Fragment  {
                 timePickerDialog.show();
             }
         });
-
         ettime2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -214,7 +249,7 @@ public class HomeFragment extends Fragment  {
             }
         });
 
-       /* btnpicker.setOnClickListener(new View.OnClickListener() {
+        /* btnpicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PlacePicker.IntentBuilder builder=new PlacePicker.IntentBuilder();
@@ -226,14 +261,14 @@ public class HomeFragment extends Fragment  {
                 } catch (GooglePlayServicesNotAvailableException e) {
                     e.printStackTrace();
                 }
-
-
             }
         });*/
 
-        return root;
-    }
+        LoadSettings();
 
+        return root;
+
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -253,12 +288,54 @@ public class HomeFragment extends Fragment  {
     }
 
     private void moveToStores(){
-        Intent intent=new Intent (this.getActivity(), Stores.class);
+        Intent intent=new Intent (HomeFragment.this.getActivity(), Stores.class);
         startActivity(intent);
 
     }
 
-    /*@Override
+    private void LoadSettings(){
+        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(HomeFragment.this.getActivity());
+        boolean chk_night=sp.getBoolean("NIGHT",false);
+        if(chk_night){
+            ml.setBackgroundColor(Color.parseColor("#000000"));
+            t1.setTextColor(Color.parseColor("#ffffff"));
+            tvtime.setTextColor(Color.parseColor("#ffffff"));
+            tvdate.setTextColor(Color.parseColor("#ffffff"));
+            textView1.setTextColor(Color.parseColor("#ffffff"));
+
+        }
+        else{
+            ml.setBackgroundColor(Color.parseColor("#ffffff"));
+            t1.setTextColor(Color.parseColor("#000000"));
+            tvtime.setTextColor(Color.parseColor("#000000"));
+            tvdate.setTextColor(Color.parseColor("#000000"));
+            textView1.setTextColor(Color.parseColor("#000000"));
+        }
+
+
+        String orien=sp.getString("ORIENTATION","false");
+        if("1".equals(orien)){
+
+            HomeFragment.this.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_BEHIND);
+
+        }
+        else if("2".equals(orien)){
+            HomeFragment.this.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        }
+        else if("3".equals(orien)){
+            HomeFragment.this.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        }
+    }
+
+    @Override
+    public void onResume() {
+        LoadSettings();
+        super.onResume();
+    }
+
+/*@Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode==PLACE_PICKER_REQUEST){
             if (resultCode==RESULT_OK){
