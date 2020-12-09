@@ -1,12 +1,16 @@
 package com.example.pedla;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+
 import androidx.navigation.ui.AppBarConfiguration;
 
 import androidx.navigation.NavController;
@@ -56,7 +60,23 @@ public class SideBar extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        switch (item.getItemId()) {
+
+            case R.id.action_settings:
+                FirebaseAuth.getInstance().signOut(); //Logout from the application
+                Intent intent=new Intent (SideBar.this,Login.class);
+                startActivity(intent);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 
     @Override
     public boolean onSupportNavigateUp() {

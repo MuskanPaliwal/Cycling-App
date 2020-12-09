@@ -38,7 +38,11 @@ public class Signup extends AppCompatActivity {
         ConfirmPass=(EditText)findViewById(R.id.editTextTextPasswordType) ;
         fAuth = FirebaseAuth.getInstance();
 
-
+        if(fAuth.getCurrentUser() != null) {
+            Intent intent=new Intent (Signup.this,SideBar.class);
+            startActivity(intent);
+            finish();
+        }
         btnmovetologin=findViewById(R.id.btn3);
         btnmovetologin.setOnClickListener(new View.OnClickListener() {
             @Override
