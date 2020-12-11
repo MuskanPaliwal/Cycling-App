@@ -13,13 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Trynna"></activity>
+        <activity android:name=".Stores" />
+        <activity android:name=".OldCity" />
+        <activity android:name=".GovardhanSagar" />
+        <activity android:name=".SajjanGarh" />
+        <activity android:name=".DoodhTalayi" />
+        <activity android:name=".RaniRoad" />
+        <activity android:name=".BadiLake" />
         <activity android:name=".AboutApp" />
         <activity android:name=".CovidRules" />
         <activity android:name=".BookingSuccessfull" />
         <activity android:name=".Payment" />
         <activity android:name=".Cycles" />
-        <activity android:name=".Stores" />
         <activity android:name=".OrderReview" />
         <activity android:name=".Accessories" />
         <activity
