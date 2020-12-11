@@ -2,14 +2,11 @@ package com.example.pedla.ui.home;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.preference.ListPreference;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,44 +15,32 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
+
+import com.example.pedla.AboutApp;
+import com.example.pedla.CovidRules;
+import com.example.pedla.R;
+import com.example.pedla.Signup;
+import com.example.pedla.Stores;
+
+import java.util.Calendar;
 
 /*import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pedla.HS;
 */
-import com.example.pedla.AboutApp;
-import com.example.pedla.Choice;
-import com.example.pedla.CovidRules;
-
-import com.example.pedla.Login;
-import com.example.pedla.R;
 /*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/import com.example.pedla.Stores;
-import com.google.android.gms.common.api.Status;
-
-import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
-
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
+*/
 
 public class HomeFragment extends Fragment  {
 
@@ -144,7 +129,9 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent);
             }
         });
-        Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
+/*
+
+Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
 
         editText.setFocusable(false);
 
@@ -160,12 +147,18 @@ public class HomeFragment extends Fragment  {
             }
         });
 
-
+*/
         btntostore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                moveToStores();
+                if (moveToStores()){
+                    Intent intent =new Intent(HomeFragment.this.getActivity(),Stores.class);
+                    startActivity(intent);
+                }
+                else{
+                    AlertDialog();
+                }
             }
         });
 
@@ -269,7 +262,7 @@ public class HomeFragment extends Fragment  {
         return root;
 
     }
-    @Override
+   /* @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==100 && resultCode==RESULT_OK){
@@ -285,11 +278,38 @@ public class HomeFragment extends Fragment  {
             Toast.makeText(HomeFragment.this.getActivity(),status.getStatusMessage(),
                     Toast.LENGTH_SHORT).show();
         }
+    }*/
+
+    private boolean moveToStores(){
+        String dateone, datetwo,timeone,timetwo;
+        dateone=etdate.getText().toString().trim();
+        datetwo=etdate2.getText().toString().trim();
+        timeone=ettime.getText().toString().trim();
+        timetwo=ettime2.getText().toString().trim();
+
+        if(dateone.length()==0|| datetwo.length()==0|| timeone.length()==0|| timetwo.length()==0){
+
+            Toast.makeText(HomeFragment.this.getContext(), "Please fill the empty fields", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        return true;
     }
 
-    private void moveToStores(){
-        Intent intent=new Intent (HomeFragment.this.getActivity(), Stores.class);
-        startActivity(intent);
+    private void AlertDialog()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(HomeFragment.this.getActivity(),R.style.AlertDialogue);
+        alertDialogBuilder.setMessage("Please ensure All The Fields Are Correct").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int id)
+            {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
 
     }
 
