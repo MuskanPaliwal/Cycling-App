@@ -178,6 +178,11 @@ public class HomeFragment extends Fragment  {
         fStore=FirebaseFirestore.getInstance();
         Userid=fAuth.getCurrentUser().getUid();
 
+        final String[] date1 = new String[1];
+        final String[] date2 = new String[1];
+        final String[] time1 = new String[1];
+        final String[] time2=new String[1];
+
         DocumentReference documentReference=fStore.collection("Users").document(Userid);
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -278,6 +283,10 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
 
                 if (moveToStores()){
                     Intent intent =new Intent(HomeFragment.this.getActivity(),Stores.class);
+                    intent.putExtra("dateone",date1[0]);
+                    intent.putExtra("datetwo",date2[0]);
+                    intent.putExtra("timeone",time1[0]);
+                    intent.putExtra("timetwo",time2[0]);
                     startActivity(intent);
                 }
                 else{
@@ -294,8 +303,8 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month=month+1;
-                        String date= day+"/"+month+"/"+year;
-                        etdate.setText(date);
+                        date1[0] = day+"/"+month+"/"+year;
+                        etdate.setText(date1[0]);
 
                     }
                 },year,month,day);
@@ -312,8 +321,8 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
                     @Override
                     public void onDateSet(DatePicker view, int year1, int month1, int day1) {
                         month1=month1+1;
-                        String date= day1+"/"+month1+"/"+year1;
-                        etdate2.setText(date);
+                        date2[0] = day1+"/"+month1+"/"+year1;
+                        etdate2.setText(date2[0]);
 
                     }
                 },year1,month1,day1);
@@ -338,7 +347,8 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
                         }else{
                             amPm=" AM";
                         }
-                        ettime.setText(String.format("%02d:%02d",hourOfDay,minute)+amPm);
+                        time1[0] =String.format("%02d:%02d",hourOfDay,minute)+amPm;
+                        ettime.setText(time1[0]);
                     }
                 },currentHour,currentminute,false);
                 timePickerDialog.show();
@@ -359,7 +369,8 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
                         }else{
                             amPm=" AM";
                         }
-                        ettime2.setText(String.format("%02d:%02d",hourOfDay,minute)+amPm);
+                        time2[0]=String.format("%02d:%02d",hourOfDay,minute)+amPm;
+                        ettime2.setText(time2[0]);
                     }
                 },currentHour1,currentminute1,false);
                 timePickerDialog.show();
