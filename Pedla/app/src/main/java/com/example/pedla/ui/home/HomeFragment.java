@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
 import com.example.pedla.AboutApp;
+import com.example.pedla.Bookings;
 import com.example.pedla.CovidRules;
 import com.example.pedla.R;
 import com.example.pedla.Signup;
@@ -95,7 +96,7 @@ public class HomeFragment extends Fragment  {
     ImageView img5;
     ImageView img6;
 
-    private CardView cardView2;
+    private CardView cardView2,cardview3;
     private HomeViewModel homeViewModel;
     LinearLayout ml;
     private TextView t1;
@@ -146,6 +147,7 @@ public class HomeFragment extends Fragment  {
 
         cardView1=root.findViewById(R.id.card11);
         cardView2=root.findViewById(R.id.card22);
+        cardview3=root.findViewById(R.id.card33);
 
         tvdate=root.findViewById(R.id.tv_date);
         etdate=root.findViewById(R.id.et_date);
@@ -255,8 +257,16 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent);
             }
         });
-/*
 
+        cardview3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent=new Intent(HomeFragment.this.getActivity(), Bookings.class);
+                startActivity(intent);
+            }
+        });
+
+/*
 Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
 =======
         //Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
