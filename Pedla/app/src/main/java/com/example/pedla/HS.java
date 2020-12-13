@@ -128,7 +128,7 @@ public class HS extends AppCompatActivity {
                     Intent intent=new Intent(HS.this,HS.class);
                     startActivity(intent);
                 }
-                else if(item.getItemId()==R.id.nav_aboutus){
+                else if(item.getItemId()==R.id.nav_logout){
 
                 }
                 DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
