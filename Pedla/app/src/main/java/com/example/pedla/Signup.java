@@ -1,10 +1,5 @@
 package com.example.pedla;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -22,12 +21,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TimeZone;
 
 public class Signup extends AppCompatActivity {
     public static final String TAG = "TAG";
@@ -74,7 +72,6 @@ public class Signup extends AppCompatActivity {
                 String password = Password.getText().toString().trim();
                 final String phoneNumber = Phone.getText().toString().trim();
                 final String name = Name.getText().toString().trim();
-//                final SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
                 if (moveTohomescreen()) {
                     //Signup user in Firebase
                     fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -88,7 +85,7 @@ public class Signup extends AppCompatActivity {
                                 user.put("Name", name);
                                 user.put("Email", email);
                                 user.put("PhoneNumber", phoneNumber);
-//                                user.put("CreatedAt", formatter);
+                                user.put("CreatedAt", FieldValue.serverTimestamp());
                                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
