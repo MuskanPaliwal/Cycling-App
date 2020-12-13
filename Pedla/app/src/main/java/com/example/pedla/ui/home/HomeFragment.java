@@ -39,6 +39,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pedla.HS;
 */
+
 import com.example.pedla.AboutApp;
 import com.example.pedla.BadiLake;
 import com.example.pedla.Choice;
@@ -74,6 +75,40 @@ import java.util.Calendar;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
+
+import com.example.pedla.AboutApp;
+import com.example.pedla.BadiLake;
+import com.example.pedla.Choice;
+import com.example.pedla.CovidRules;
+
+import com.example.pedla.DoodhTalayi;
+import com.example.pedla.GovardhanSagar;
+import com.example.pedla.Login;
+import com.example.pedla.OldCity;
+import com.example.pedla.R;
+/*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+*/import com.example.pedla.RaniRoad;
+import com.example.pedla.SajjanGarh;
+import com.example.pedla.Stores;
+import com.google.android.gms.common.api.Status;
+
+/*import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;*/
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+//import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 public class HomeFragment extends Fragment  {
     TextView profilename;
@@ -172,6 +207,11 @@ public class HomeFragment extends Fragment  {
         fStore=FirebaseFirestore.getInstance();
         Userid=fAuth.getCurrentUser().getUid();
 
+        final String[] date1 = new String[1];
+        final String[] date2 = new String[1];
+        final String[] time1 = new String[1];
+        final String[] time2=new String[1];
+      
         DocumentReference documentReference=fStore.collection("Users").document(Userid);
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -245,7 +285,7 @@ public class HomeFragment extends Fragment  {
             }
         });
 
-        //Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
+Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
 
         editText.setFocusable(false);
 
@@ -260,14 +300,17 @@ public class HomeFragment extends Fragment  {
                 startActivityForResult(intent,100);
             }
         });*/
-
-*/
+      
         btntostore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (moveToStores()){
                     Intent intent =new Intent(HomeFragment.this.getActivity(),Stores.class);
+                    intent.putExtra("dateone",date1[0]);
+                    intent.putExtra("datetwo",date2[0]);
+                    intent.putExtra("timeone",time1[0]);
+                    intent.putExtra("timetwo",time2[0]);
                     startActivity(intent);
                 }
                 else{
@@ -284,8 +327,8 @@ public class HomeFragment extends Fragment  {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month=month+1;
-                        String date= day+"/"+month+"/"+year;
-                        etdate.setText(date);
+                        date1[0] = day+"/"+month+"/"+year;
+                        etdate.setText(date1[0]);
 
                     }
                 },year,month,day);
@@ -302,8 +345,8 @@ public class HomeFragment extends Fragment  {
                     @Override
                     public void onDateSet(DatePicker view, int year1, int month1, int day1) {
                         month1=month1+1;
-                        String date= day1+"/"+month1+"/"+year1;
-                        etdate2.setText(date);
+                        date2[0] = day1+"/"+month1+"/"+year1;
+                        etdate2.setText(date2[0]);
 
                     }
                 },year1,month1,day1);
@@ -328,7 +371,8 @@ public class HomeFragment extends Fragment  {
                         }else{
                             amPm=" AM";
                         }
-                        ettime.setText(String.format("%02d:%02d",hourOfDay,minute)+amPm);
+                        time1[0] =String.format("%02d:%02d",hourOfDay,minute)+amPm;
+                        ettime.setText(time1[0]);
                     }
                 },currentHour,currentminute,false);
                 timePickerDialog.show();
@@ -349,7 +393,8 @@ public class HomeFragment extends Fragment  {
                         }else{
                             amPm=" AM";
                         }
-                        ettime2.setText(String.format("%02d:%02d",hourOfDay,minute)+amPm);
+                        time2[0]=String.format("%02d:%02d",hourOfDay,minute)+amPm;
+                        ettime2.setText(time2[0]);
                     }
                 },currentHour1,currentminute1,false);
                 timePickerDialog.show();
@@ -394,6 +439,7 @@ public class HomeFragment extends Fragment  {
         }
     }*/
 
+
     private boolean moveToStores(){
         String dateone, datetwo,timeone,timetwo;
         dateone=etdate.getText().toString().trim();
@@ -410,6 +456,7 @@ public class HomeFragment extends Fragment  {
 
         return true;
     }
+
 
     private void AlertDialog()
     {

@@ -21,10 +21,10 @@
             android:id="@+id/reviewOrder"
             android:layout_gravity="center"
             android:text="Review Your Order"
-            android:drawableLeft="@drawable/back"
+            android:gravity="center"
             android:drawablePadding="5dp"
             android:textSize="26sp"
-            android:fontFamily="@font/antic"
+            android:fontFamily="@font/average"
             android:textColor="#000000"
             android:textStyle="bold"
             android:clickable="false"
@@ -58,7 +58,7 @@
                         android:id="@+id/startdate"
                         android:layout_margin="15dp"
                         android:layout_gravity="center"
-                        android:text="Your booking starts From: 12/11/2020 To 13/11/2020"
+                        android:gravity="center"
                         android:textSize="15sp"
                         android:fontFamily="@font/antic"
                         android:textColor="#000000"
@@ -70,8 +70,8 @@
                         android:id="@+id/timings"
                         android:layout_marginLeft="15dp"
                         android:layout_gravity="center"
-                        android:text="Timings are: 12:00 PM (12 Nov) to 1:00 PM (13 Nov) "
-                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textSize="15sp"
                         android:fontFamily="@font/antic"
                         android:textColor="#000000"
                         android:textStyle="bold"
@@ -101,10 +101,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cname1"
+                        android:id="@+id/cycle"
                         android:layout_margin="10dp"
                         android:layout_gravity="center"
-                        android:text="Cycle 1"
                         android:textSize="22sp"
                         android:fontFamily="@font/antic"
                         android:textColor="#000000"
@@ -114,12 +113,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/camount1"
+                        android:id="@+id/cycleamount"
                         android:textSize="18sp"
                         android:textColor="#000000"
                         android:layout_margin="10dp"
                         android:layout_gravity="center"
-                        android:text="Amount: Rs. 50/hr"
                         />
                     </LinearLayout>
                 </LinearLayout>
@@ -145,10 +143,9 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/caccessoriesname"
+                            android:id="@+id/accessoryname"
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
-                            android:text="Accessories"
                             android:textSize="24sp"
                             android:fontFamily="@font/antic"
                             android:textColor="#000000"
@@ -158,12 +155,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/camountaccessories"
+                            android:id="@+id/amountaccessories"
                             android:textSize="18sp"
                             android:textColor="#000000"
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
-                            android:text="Amount: Rs. 50/-"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -176,7 +172,7 @@
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
                     android:paddingLeft="30dp"
-                    android:text="Total Amount: Rs. 1250/-"
+                    android:gravity="center"
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

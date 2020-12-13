@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#fece2f"
     tools:context=".OrderReview">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:clickable="false"
             android:drawablePadding="5dp"
             android:focusable="true"
-            android:fontFamily="@font/antic"
+            android:fontFamily="@font/average"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="Booking Successful"
             android:textColor="#000000"
@@ -32,13 +32,13 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:cardElevation="10dp"
             app:cardCornerRadius="10dp"
             android:id="@+id/O1"
             android:layout_marginTop="50dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#C3EDEDED"
+            app:cardBackgroundColor="#ffffff"
             >
 
             <LinearLayout
@@ -53,29 +53,39 @@
                     >
 
                     <TextView
-                        android:id="@+id/startdate"
+                        android:id="@+id/store"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="15dp"
+                        android:layout_margin="8dp"
                         android:fontFamily="@font/antic"
                         android:gravity="center|center_horizontal|center_vertical"
-                        android:text="From: 12/11/2020 To 13/11/2020"
                         android:textColor="#000000"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/timings"
+                        android:id="@+id/startdate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/antic"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timings1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="15dp"
                         android:fontFamily="@font/antic"
                         android:gravity="center|center_horizontal|center_vertical"
-                        android:text="12:00 PM (12 Nov) to 1:00 PM (13 Nov) "
                         android:textColor="#000000"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -102,10 +112,9 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/cname1"
+                            android:id="@+id/cycle1"
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
-                            android:text="Cycle 1"
                             android:textSize="22sp"
                             android:fontFamily="@font/antic"
                             android:textColor="#000000"
@@ -115,12 +124,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/camount1"
+                            android:id="@+id/cycleamount1"
                             android:textSize="18sp"
                             android:textColor="#000000"
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
-                            android:text="Paid Amount: Rs. 50/hr"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -146,10 +154,9 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/caccessoriesname"
+                            android:id="@+id/accessoriesname1"
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
-                            android:text="Accessories"
                             android:textSize="24sp"
                             android:fontFamily="@font/antic"
                             android:textColor="#000000"
@@ -159,25 +166,24 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/camountaccessories"
+                            android:id="@+id/amountaccessories1"
                             android:textSize="18sp"
                             android:textColor="#000000"
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
-                            android:text="Paid Amount: Rs. 50/-"
                             />
                     </LinearLayout>
                 </LinearLayout>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/totalPay"
+                    android:id="@+id/totalPay1"
                     android:textSize="24sp"
                     android:textColor="#000000"
                     android:layout_margin="15dp"
                     android:layout_gravity="center"
-                    android:paddingLeft="30dp"
-                    android:text="Paid Total Amount: Rs. 100/-"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -191,7 +197,7 @@
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
             android:text="Back To Home"
-            android:background="#fece2f"
+            android:background="#ffffff"
             />
     </LinearLayout>
 </ScrollView>
