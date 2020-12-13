@@ -28,6 +28,7 @@ import androidx.preference.PreferenceManager;
 
 import com.example.pedla.AboutApp;
 import com.example.pedla.BadiLake;
+import com.example.pedla.Bookings;
 import com.example.pedla.CovidRules;
 import com.example.pedla.DoodhTalayi;
 import com.example.pedla.GovardhanSagar;
@@ -44,26 +45,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 
-/*import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
-import com.example.pedla.HS;
-*/
-/*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/
-/*import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;*/
-//import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
-/*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/
-/*import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;*/
-//import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
-
 public class HomeFragment extends Fragment  {
     TextView profilename;
     FirebaseAuth fAuth;
@@ -78,7 +59,7 @@ public class HomeFragment extends Fragment  {
     ImageView img5;
     ImageView img6;
 
-    private CardView cardView2;
+    private CardView cardView2,cardview3;
     private HomeViewModel homeViewModel;
     LinearLayout ml;
     private TextView t1;
@@ -94,10 +75,7 @@ public class HomeFragment extends Fragment  {
     EditText editText;
     TextView textView1;
     private Button btntostore;
-    /* Button btnpicker;
-     TextView location;
-     TextView name,longitude;
-     int PLACE_PICKER_REQUEST=1;*/
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -129,6 +107,7 @@ public class HomeFragment extends Fragment  {
 
         cardView1=root.findViewById(R.id.card11);
         cardView2=root.findViewById(R.id.card22);
+        cardview3=root.findViewById(R.id.card33);
 
         tvdate=root.findViewById(R.id.tv_date);
         etdate=root.findViewById(R.id.et_date);
@@ -142,10 +121,6 @@ public class HomeFragment extends Fragment  {
         textView1=root.findViewById(R.id.text_view1);
 
         btntostore=root.findViewById(R.id.btnstores);
-       /* btnpicker=root.findViewById(R.id.picker);
-        location=root.findViewById(R.id.address);
-        name=root.findViewById(R.id.name);
-        longitude=root.findViewById(R.id.longitude);*/
 
         final Calendar calender=Calendar.getInstance();
         final int year= calender.get(Calendar.YEAR);
@@ -239,19 +214,16 @@ public class HomeFragment extends Fragment  {
             }
         });
 
+        cardview3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent=new Intent(HomeFragment.this.getActivity(), Bookings.class);
+                startActivity(intent);
+            }
+        });
+
         editText.setFocusable(false);
 
-        /*editText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<Place.Field> fieldList= Arrays.asList(Place.Field.ADDRESS,
-                        Place.Field.NAME);
-                Intent intent=new Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN,
-                        fieldList).build(HomeFragment.this.getActivity());
-
-                startActivityForResult(intent,100);
-            }
-        });*/
       
         btntostore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -353,44 +325,12 @@ public class HomeFragment extends Fragment  {
             }
         });
 
-        /* btnpicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PlacePicker.IntentBuilder builder=new PlacePicker.IntentBuilder();
-                try {
-                    startActivityForResult(builder.build(HomeFragment.this.getActivity())
-                    ,PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    e.printStackTrace();
-                }
-            }
-        });*/
 
         LoadSettings();
 
         return root;
 
     }
-   /* @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==100 && resultCode==RESULT_OK){
-            Place place=Autocomplete.getPlaceFromIntent(data);
-            editText.setText(place.getAddress());
-
-            textView1.setText(String.format("Locality Name: %s",place.getName()));
-
-
-
-        }else if(requestCode== AutocompleteActivity.RESULT_ERROR){
-            Status status = Autocomplete.getStatusFromIntent(data);
-            Toast.makeText(HomeFragment.this.getActivity(),status.getStatusMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }*/
-
 
     private boolean moveToStores(){
         String dateone, datetwo,timeone,timetwo;
@@ -468,20 +408,4 @@ public class HomeFragment extends Fragment  {
         super.onResume();
     }
 
-/*@Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode==PLACE_PICKER_REQUEST){
-            if (resultCode==RESULT_OK){
-                Place place= PlacePicker.getPlace(data,HomeFragment.this.getActivity());
-
-                String Location = String.format(String.valueOf(place.getName()));
-                String addr=String.format(String.valueOf( place.getAddress()));
-                String latitude=String.valueOf(place.getLatLng().longitude);
-
-                location.setText(Location);
-                name.setText(addr);
-                longitude.setText(latitude);
-            }
-        }
-    }*/
 }
