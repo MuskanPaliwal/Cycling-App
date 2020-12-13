@@ -40,9 +40,41 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.pedla.HS;
 */
 
+import com.example.pedla.AboutApp;
+import com.example.pedla.BadiLake;
+import com.example.pedla.Choice;
+import com.example.pedla.CovidRules;
+
+import com.example.pedla.DoodhTalayi;
+import com.example.pedla.GovardhanSagar;
+import com.example.pedla.Login;
+import com.example.pedla.OldCity;
+import com.example.pedla.R;
 /*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/
+*/import com.example.pedla.RaniRoad;
+import com.example.pedla.SajjanGarh;
+import com.example.pedla.Stores;
+import com.google.android.gms.common.api.Status;
+
+/*import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;*/
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+//import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
+
+import static android.app.Activity.RESULT_OK;
 
 import com.example.pedla.AboutApp;
 import com.example.pedla.BadiLake;
@@ -78,9 +110,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-/*import static android.app.Activity.RESULT_OK;
->>>>>>> 3c0ae0b0ad82fd48ac272d76637360a1523d203f
-*/
 public class HomeFragment extends Fragment  {
     TextView profilename;
     FirebaseAuth fAuth;
@@ -182,7 +211,7 @@ public class HomeFragment extends Fragment  {
         final String[] date2 = new String[1];
         final String[] time1 = new String[1];
         final String[] time2=new String[1];
-
+      
         DocumentReference documentReference=fStore.collection("Users").document(Userid);
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -255,12 +284,8 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent);
             }
         });
-/*
 
 Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
-=======
-        //Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
->>>>>>> 3c0ae0b0ad82fd48ac272d76637360a1523d203f
 
         editText.setFocusable(false);
 
@@ -275,8 +300,7 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
                 startActivityForResult(intent,100);
             }
         });*/
-
-
+      
         btntostore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -16,6 +16,9 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
     RecyclerView recview;
     myadapter adapter;
     String time1,time2,date1,date2;
+    RecyclerView recview;
+    myadapter adapter;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,6 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
                 new FirestoreRecyclerOptions.Builder<model>()
                 .setQuery(FirebaseFirestore.getInstance().collection("Stores"),model.class)
                 .build();
-
         adapter=new myadapter(options,this);
         recview.setAdapter(adapter);
 
@@ -71,4 +73,5 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
         startActivity(intent);
         finish();
     }
+
 }
