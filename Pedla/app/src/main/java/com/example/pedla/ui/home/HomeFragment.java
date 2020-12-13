@@ -27,10 +27,20 @@ import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
 import com.example.pedla.AboutApp;
+import com.example.pedla.BadiLake;
 import com.example.pedla.CovidRules;
+import com.example.pedla.DoodhTalayi;
+import com.example.pedla.GovardhanSagar;
+import com.example.pedla.OldCity;
 import com.example.pedla.R;
-import com.example.pedla.Signup;
+import com.example.pedla.RaniRoad;
+import com.example.pedla.SajjanGarh;
 import com.example.pedla.Stores;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 
@@ -39,76 +49,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pedla.HS;
 */
-
-import com.example.pedla.AboutApp;
-import com.example.pedla.BadiLake;
-import com.example.pedla.Choice;
-import com.example.pedla.CovidRules;
-
-import com.example.pedla.DoodhTalayi;
-import com.example.pedla.GovardhanSagar;
-import com.example.pedla.Login;
-import com.example.pedla.OldCity;
-import com.example.pedla.R;
 /*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/import com.example.pedla.RaniRoad;
-import com.example.pedla.SajjanGarh;
-import com.example.pedla.Stores;
-import com.google.android.gms.common.api.Status;
-
+*/
 /*import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;*/
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 //import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
-
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
-
-import com.example.pedla.AboutApp;
-import com.example.pedla.BadiLake;
-import com.example.pedla.Choice;
-import com.example.pedla.CovidRules;
-
-import com.example.pedla.DoodhTalayi;
-import com.example.pedla.GovardhanSagar;
-import com.example.pedla.Login;
-import com.example.pedla.OldCity;
-import com.example.pedla.R;
 /*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/import com.example.pedla.RaniRoad;
-import com.example.pedla.SajjanGarh;
-import com.example.pedla.Stores;
-import com.google.android.gms.common.api.Status;
-
+*/
 /*import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;*/
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 //import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
-
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
 
 public class HomeFragment extends Fragment  {
     TextView profilename;
@@ -284,8 +238,6 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent);
             }
         });
-
-Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
 
         editText.setFocusable(false);
 
