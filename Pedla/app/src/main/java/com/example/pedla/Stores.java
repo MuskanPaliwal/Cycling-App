@@ -1,21 +1,22 @@
 package com.example.pedla;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class Stores extends AppCompatActivity implements myadapter.OnListItemClicked {
     RecyclerView recview;
     myadapter adapter;
     String time1,time2,date1,date2;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
         date1=(getIntent().getStringExtra("dateone"));
         date2=(getIntent().getStringExtra("datetwo"));
 
+
+
         setContentView(R.layout.activity_stores);
         recview=findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
@@ -34,7 +37,6 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
                 new FirestoreRecyclerOptions.Builder<model>()
                 .setQuery(FirebaseFirestore.getInstance().collection("Stores"),model.class)
                 .build();
-
         adapter=new myadapter(options,this);
         recview.setAdapter(adapter);
 
@@ -71,4 +73,5 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
         startActivity(intent);
         finish();
     }
+
 }

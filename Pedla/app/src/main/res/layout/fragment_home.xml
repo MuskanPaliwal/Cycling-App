@@ -16,8 +16,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
     <TextView
         android:id="@+id/tv_2"
         android:layout_width="match_parent"
@@ -26,10 +24,6 @@
         android:textColor="@color/black"
         android:textSize="30sp"
         app:fontFamily="@font/average" />
-
-
-
-
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -315,28 +309,8 @@
 
         </LinearLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edit_text"
-            android:hint="Enter Your Location"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:drawablePadding="16dp"
-            android:drawableLeft="@drawable/ic_location"
-            android:gravity="center_vertical"
-            android:background="@android:drawable/editbox_background"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:id="@+id/text_view1"
-            android:layout_gravity="center"
-            android:padding="12dp"
-            android:textColor="#000000"
-            android:fontFamily="@font/antic"
-            />
+
 
         <Button
             android:layout_width="match_parent"

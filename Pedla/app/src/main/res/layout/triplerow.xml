@@ -14,6 +14,9 @@
         android:layout_height="wrap_content"
         android:padding="15dp">
 
+
+
+
         <TextView
             android:id="@+id/datebooking"
             android:layout_width="match_parent"
@@ -28,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/datebooking"
+
             android:layout_margin="8dp"
             android:gravity="center"
             android:textColor="@color/black"
@@ -37,18 +41,29 @@
             android:id="@+id/endtimebooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/datebooking"
+            android:layout_below="@+id/timebooking"
+
             android:layout_margin="8dp"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="14sp"
             />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookedcycle"
+            android:layout_margin="8dp"
+            android:layout_below="@id/endtimebooking"
+            />
+
+
         <TextView
             android:id="@+id/storebooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/timebooking"
+            android:layout_toRightOf="@id/bookedcycle"
+            android:layout_below="@id/endtimebooking"
             android:layout_margin="8dp"
             android:gravity="center"
             android:textColor="@color/black"
@@ -59,7 +74,8 @@
             android:id="@+id/cyclebooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/storebooking"
+            android:layout_toRightOf="@id/bookedcycle"
+            android:layout_below="@id/storebooking"
             android:layout_margin="8dp"
             android:gravity="center"
             android:textColor="@color/black"
@@ -69,6 +85,7 @@
             android:id="@+id/accessorybooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bookedcycle"
             android:layout_below="@+id/cyclebooking"
             android:layout_margin="8dp"
             android:gravity="center"
@@ -80,6 +97,7 @@
             android:id="@+id/paybooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bookedcycle"
             android:layout_below="@+id/accessorybooking"
             android:layout_margin="8dp"
             android:gravity="center"

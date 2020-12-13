@@ -15,9 +15,10 @@ public class modelone {
 
     }
 
-    public modelone(String cycle_Name, String amount) {
+    public modelone(String cycle_Name, String amount,String cycle_image) {
         Cycle_Name = cycle_Name;
         Amount = amount;
+        Cycle_Image=cycle_image;
     }
 
     public String getCycle_Name() {

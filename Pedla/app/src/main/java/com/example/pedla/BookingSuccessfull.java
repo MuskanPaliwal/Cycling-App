@@ -6,13 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 public class BookingSuccessfull extends AppCompatActivity {
     private Button btn6;
     String getcycle, getcycleamounnt, getstorename, getaccessories;
     String time1,time2,date1,date2;
     String amountaccessory,totalpayment;
+    String cycleimageurl, cycleid,storeid;
+    ImageView cyclefinalimage;
 
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
 
@@ -32,6 +37,10 @@ public class BookingSuccessfull extends AppCompatActivity {
         amountaccessory=(getIntent().getStringExtra("accessoriesamount"));
         totalpayment=(getIntent().getStringExtra("totalpayment"));
 
+        cycleid=(getIntent().getStringExtra("CYCLEID"));
+        storeid=(getIntent().getStringExtra("STOREID"));
+        cycleimageurl=(getIntent().getStringExtra("cycleimage"));
+
 
         t1=findViewById(R.id.store);
         t2=findViewById(R.id.startdate1);
@@ -41,6 +50,7 @@ public class BookingSuccessfull extends AppCompatActivity {
         t6=findViewById(R.id.accessoriesname1);
         t7=findViewById(R.id.amountaccessories1);
         t8=findViewById(R.id.totalPay1);
+        cyclefinalimage=findViewById(R.id.finalcycleimage);
 
 
         t1.setText(getstorename);
@@ -52,8 +62,7 @@ public class BookingSuccessfull extends AppCompatActivity {
         t7.setText("Amount paid for accessories: "+amountaccessory);
         t8.setText("Total amount paid: "+totalpayment);
 
-
-
+        Glide.with(cyclefinalimage.getContext()).load(cycleimageurl).into(cyclefinalimage);
 
         btn6=findViewById(R.id.buttonPay);
         btn6.setOnClickListener(new View.OnClickListener() {

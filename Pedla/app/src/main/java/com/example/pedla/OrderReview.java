@@ -1,19 +1,18 @@
 package com.example.pedla;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class OrderReview extends AppCompatActivity {
     private Button btnToPayAmount;
@@ -24,7 +23,6 @@ public class OrderReview extends AppCompatActivity {
     int acctotalamount;
     int totalamount;
     String cycleimageurl, cycleid,storeid;
-
     ImageView cycleorderimage;
 
     @Override
@@ -93,8 +91,9 @@ public class OrderReview extends AppCompatActivity {
         intent.putExtra("accessories",getaccessories);
         intent.putExtra("accessoriesamount",Integer.toString(acctotalamount));
         intent.putExtra("totalpayment",Integer.toString(totalamount));
-
-
+        intent.putExtra("STOREID",storeid);
+        intent.putExtra("CYCLEID",cycleid);
+        intent.putExtra("cycleimage",cycleimageurl);
         startActivity(intent);
         finish();
     }

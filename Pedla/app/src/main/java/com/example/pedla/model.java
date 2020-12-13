@@ -15,10 +15,11 @@ public class model {
 
     }
 
-    public model(String name, String available_Cycles, String location) {
+    public model(String name, String available_Cycles, String location,String image) {
         Name = name;
         Available_Cycles = available_Cycles;
         Location = location;
+        Image=image;
     }
 
     public String getName() {

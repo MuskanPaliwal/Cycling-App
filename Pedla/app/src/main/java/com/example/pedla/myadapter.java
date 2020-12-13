@@ -38,7 +38,6 @@ private OnListItemClicked listener;
         holder.course.setText("Available Cycles: "+model.getAvailable_Cycles());
         holder.email.setText(model.getLocation());
         Glide.with(holder.img.getContext()).load(model.getImage()).into(holder.img);
-
     }
 
     @NonNull
@@ -48,21 +47,18 @@ private OnListItemClicked listener;
         return new myviewholder(view);
     }
 
-
     class myviewholder extends RecyclerView.ViewHolder{
-
         TextView name, course, email;
         ImageView img;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
-           itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int position=getAdapterPosition();
                     listener.onItemClick(position,getSnapshots().getSnapshot(position));
                 }
             });
-
             name=(TextView)itemView.findViewById(R.id.nametext);
             course=(TextView)itemView.findViewById(R.id.coursetext);
             email=(TextView)itemView.findViewById(R.id.emailtext);
@@ -73,6 +69,4 @@ private OnListItemClicked listener;
     public  interface  OnListItemClicked {
         void onItemClick(int position, DocumentSnapshot documentSnapshot);
     }
-
-
 }
