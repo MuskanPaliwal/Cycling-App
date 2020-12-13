@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -35,21 +36,34 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.pedla.HS;
 */
 import com.example.pedla.AboutApp;
+import com.example.pedla.BadiLake;
 import com.example.pedla.Choice;
 import com.example.pedla.CovidRules;
 
+import com.example.pedla.DoodhTalayi;
+import com.example.pedla.GovardhanSagar;
 import com.example.pedla.Login;
+import com.example.pedla.OldCity;
 import com.example.pedla.R;
 /*import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-*/import com.example.pedla.Stores;
+*/import com.example.pedla.RaniRoad;
+import com.example.pedla.SajjanGarh;
+import com.example.pedla.Stores;
 import com.google.android.gms.common.api.Status;
 
-import com.google.android.libraries.places.api.Places;
+/*import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.Autocomplete;*/
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+//import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -58,8 +72,18 @@ import java.util.List;
 import static android.app.Activity.RESULT_OK;
 
 public class HomeFragment extends Fragment  {
+    TextView profilename;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String Userid;
 
     private CardView cardView1;
+    ImageView img1;
+    ImageView img2;
+    ImageView img3;
+    ImageView img4;
+    ImageView img5;
+    ImageView img6;
 
     private CardView cardView2;
     private HomeViewModel homeViewModel;
@@ -96,6 +120,16 @@ public class HomeFragment extends Fragment  {
             }
         });*/
 
+
+
+        img1=root.findViewById(R.id.cimg1);
+        img2=root.findViewById(R.id.cimg2);
+        img3=root.findViewById(R.id.cimg3);
+        img4=root.findViewById(R.id.cimg4);
+        img5=root.findViewById(R.id.cimg5);
+        img6=root.findViewById(R.id.cimg6);
+
+
         ml=root.findViewById(R.id.hsLayout);
         t1=root.findViewById(R.id.tv_1);
 
@@ -129,6 +163,68 @@ public class HomeFragment extends Fragment  {
         final int month1= calender.get(Calendar.MONTH);
         final int day1= calender.get(Calendar.DAY_OF_MONTH);
 
+        profilename=root.findViewById(R.id.tv_2);
+        fAuth=FirebaseAuth.getInstance();
+        fStore=FirebaseFirestore.getInstance();
+        Userid=fAuth.getCurrentUser().getUid();
+
+        DocumentReference documentReference=fStore.collection("Users").document(Userid);
+
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    String name=documentSnapshot.getString("Name");
+                    profilename.setText("Hello "+ name);
+                }
+            }
+        });
+
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), BadiLake.class);
+                startActivity(intent);
+            }
+        });
+        img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), RaniRoad.class);
+                startActivity(intent);
+            }
+        });
+        img3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), DoodhTalayi.class);
+                startActivity(intent);
+            }
+        });
+        img4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), SajjanGarh.class);
+                startActivity(intent);
+            }
+        });
+        img5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), GovardhanSagar.class);
+                startActivity(intent);
+            }
+        });
+        img6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeFragment.this.getActivity(), OldCity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,11 +240,11 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent);
             }
         });
-        Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
+        //Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3KfuwzRwzPvVP35A");
 
         editText.setFocusable(false);
 
-        editText.setOnClickListener(new View.OnClickListener() {
+        /*editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 List<Place.Field> fieldList= Arrays.asList(Place.Field.ADDRESS,
@@ -158,7 +254,7 @@ public class HomeFragment extends Fragment  {
 
                 startActivityForResult(intent,100);
             }
-        });
+        });*/
 
 
         btntostore.setOnClickListener(new View.OnClickListener() {
@@ -269,7 +365,7 @@ public class HomeFragment extends Fragment  {
         return root;
 
     }
-    @Override
+   /* @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==100 && resultCode==RESULT_OK){
@@ -285,7 +381,7 @@ public class HomeFragment extends Fragment  {
             Toast.makeText(HomeFragment.this.getActivity(),status.getStatusMessage(),
                     Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     private void moveToStores(){
         Intent intent=new Intent (HomeFragment.this.getActivity(), Stores.class);
