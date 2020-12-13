@@ -26,6 +26,7 @@ public class bookingadapter extends FirestoreRecyclerAdapter<bookingmodel,bookin
         viewholder.t4.setText("Cycle: "+bookingmodel.getCycle());
         viewholder.t5.setText("Accessories: "+bookingmodel.getAccessory());
         viewholder.t6.setText("Total Amount paid: "+bookingmodel.getTotal_Amount());
+        viewholder.t7.setText("End Time: "+bookingmodel.getEnd_Time());
     }
 
     @NonNull
@@ -38,7 +39,7 @@ public class bookingadapter extends FirestoreRecyclerAdapter<bookingmodel,bookin
 
 
     public class viewholder extends RecyclerView.ViewHolder {
-        TextView t1,t2,t3,t4,t5,t6;
+        TextView t1,t2,t3,t4,t5,t6,t7;
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
@@ -48,6 +49,7 @@ public class bookingadapter extends FirestoreRecyclerAdapter<bookingmodel,bookin
             t4=itemView.findViewById(R.id.cyclebooking);
             t5=itemView.findViewById(R.id.accessorybooking);
             t6=itemView.findViewById(R.id.paybooking);
+            t7=itemView.findViewById(R.id.endtimebooking);
 
         }
     }

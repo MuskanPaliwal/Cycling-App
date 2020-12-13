@@ -1,7 +1,15 @@
 package com.example.pedla;
 
 public class model {
-    String Name, Available_Cycles,Location;
+    String Name, Available_Cycles,Location,Image;
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
 
     model(){
 

@@ -1,7 +1,15 @@
 package com.example.pedla;
 
 public class modelone {
-    String Cycle_Name, Amount;
+    String Cycle_Name, Amount,Cycle_Image;
+
+    public String getCycle_Image() {
+        return Cycle_Image;
+    }
+
+    public void setCycle_Image(String cycle_Image) {
+        Cycle_Image = cycle_Image;
+    }
 
     modelone(){
 

@@ -1,7 +1,15 @@
 package com.example.pedla;
 
 public class bookingmodel {
-    String Date,Time,Cycle,Store,Accessory,Total_Amount;
+    String Date,Time,Cycle,Store,Accessory,Total_Amount,End_Time;
+
+    public String getEnd_Time() {
+        return End_Time;
+    }
+
+    public void setEnd_Time(String end_Time) {
+        End_Time = end_Time;
+    }
 
     public bookingmodel() {
     }
