@@ -25,6 +25,10 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="30sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         app:fontFamily="@font/average" />
 
 
@@ -37,7 +41,10 @@
             app:cardElevation="10dp"
             app:cardCornerRadius="10dp"
             android:id="@+id/cardtrek"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             app:cardBackgroundColor="#000000"
             >
             <TextView
@@ -45,10 +52,10 @@
                 android:layout_height="wrap_content"
                 android:text="Know the best places for trekking"
                 android:textColor="#ffffff"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:fontFamily="@font/bungee"
+                android:fontFamily="@font/average"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -232,7 +239,7 @@
             android:layout_height="wrap_content"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="Book Your Ride"
-            android:layout_margin="8dp"
+            android:layout_margin="10dp"
             android:textColor="@color/black"
             android:textSize="30sp"
             app:fontFamily="@font/average" />
@@ -245,6 +252,8 @@
             android:text="Select Date"
             android:textColor="@color/black"
             android:textSize="24sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             app:fontFamily="@font/antic" />
 
         <LinearLayout
@@ -259,7 +268,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
                 android:hint="From"
                 android:textSize="20sp" />
 
@@ -269,8 +278,9 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
                 android:hint="To"
                 android:textSize="20sp" />
 
@@ -281,6 +291,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:text="Select Time"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -299,6 +311,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
                 android:hint="From"
                 android:textSize="20sp" />
 
@@ -310,6 +323,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
                 android:hint="To"
                 android:textSize="20sp" />
 
@@ -321,6 +335,9 @@
             android:id="@+id/edit_text"
             android:hint="Enter Your Location"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:padding="16dp"
             android:drawablePadding="16dp"
             android:drawableLeft="@drawable/ic_location"
@@ -330,7 +347,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="0dp"
             android:id="@+id/text_view1"
             android:layout_gravity="center"
             android:padding="12dp"
@@ -339,7 +356,7 @@
             />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnstores"
             android:background="#fece2f"
@@ -347,6 +364,9 @@
             android:fontFamily="@font/antic"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_gravity="center"
             android:textSize="22sp"/>
 
@@ -363,9 +383,9 @@
                 app:cardCornerRadius="10dp"
                 android:id="@+id/card11"
                 android:layout_marginTop="25dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 app:cardBackgroundColor="#FFFF99"
                 >
 
@@ -386,7 +406,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/k1"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="COVID Rules"
@@ -406,7 +426,7 @@
                 app:cardCornerRadius="10dp"
                 android:id="@+id/card22"
                 android:layout_marginTop="25dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="5dp"
                 app:cardBackgroundColor="#FED8B1"
@@ -429,7 +449,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/k2"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="About App"
@@ -451,7 +471,7 @@
                 app:cardCornerRadius="10dp"
                 android:id="@+id/card33"
                 android:layout_marginTop="25dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="5dp"
                 app:cardBackgroundColor="#FFFF99"
@@ -474,7 +494,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/k3"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="Bookings"

@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textColor="@color/black"
             android:text="PEDAL To Break Limits"
             android:gravity="center"
@@ -36,8 +36,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/aboutapp1"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="Pedla is a simple cycle-renting app."
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:text="Pedla is a cycle-renting android app."
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
 
             />
 
@@ -46,17 +49,22 @@
             android:layout_height="wrap_content"
             android:id="@+id/aboutapp2"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="You can find the best and trusted cycle stores here."
-
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:text="Find the best and trusted cycle stores here."
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/aboutapp3"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="Getting a cycle is just a click away"
+            android:textSize="16sp"
+            android:text="Getting a cycle is just a click away."
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
 
             />
         <TextView
@@ -64,8 +72,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/aboutapp4"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="Book your cycle as well as accessories from this app"
+            android:textSize="16sp"
+            android:text="Book your cycle and accessories from this app."
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
 
             />
 
@@ -74,8 +85,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/aboutapp5"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="This is the first version of Pedla"
+            android:textSize="16sp"
+            android:text="This is the first version of Pedla."
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
 
             />
         <TextView
@@ -83,8 +97,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/aboutapp6"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:text="Enjoy your ride!"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
 
             />
 
@@ -92,12 +109,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btaa"
-            android:text="Home"
+            android:text="Back to Home"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
             android:background="#fece2f"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
             android:textSize="16sp"
             />
 
