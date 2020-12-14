@@ -27,6 +27,8 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
         date1=(getIntent().getStringExtra("dateone"));
         date2=(getIntent().getStringExtra("datetwo"));
 
+
+
         setContentView(R.layout.activity_stores);
         recview=findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));

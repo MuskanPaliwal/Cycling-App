@@ -3,11 +3,13 @@ package com.example.pedla;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -25,6 +27,7 @@ public class myadapterone extends FirestoreRecyclerAdapter<modelone,myadapterone
     protected void onBindViewHolder(@NonNull viewholder viewholder, int i, @NonNull modelone modelone) {
         viewholder.namecycle.setText(modelone.getCycle_Name());
         viewholder.amountcycle.setText("Amount per hour: "+modelone.getAmount());
+        Glide.with(viewholder.cycleimage.getContext()).load(modelone.getCycle_Image()).into(viewholder.cycleimage);
     }
 
     @NonNull
@@ -37,6 +40,7 @@ public class myadapterone extends FirestoreRecyclerAdapter<modelone,myadapterone
     public class viewholder extends RecyclerView.ViewHolder {
 
         TextView namecycle, amountcycle;
+        ImageView cycleimage;
         public viewholder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +53,7 @@ public class myadapterone extends FirestoreRecyclerAdapter<modelone,myadapterone
 
             namecycle=(TextView)itemView.findViewById(R.id.namecycle);
             amountcycle=(TextView)itemView.findViewById(R.id.amountcycle);
+            cycleimage=(ImageView)itemView.findViewById(R.id.cycleimage);
 
         }
     }

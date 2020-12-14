@@ -1,16 +1,25 @@
 package com.example.pedla;
 
 public class model {
-    String Name, Available_Cycles,Location;
+    String Name, Available_Cycles,Location,Image;
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
 
     model(){
 
     }
 
-    public model(String name, String available_Cycles, String location) {
+    public model(String name, String available_Cycles, String location,String image) {
         Name = name;
         Available_Cycles = available_Cycles;
         Location = location;
+        Image=image;
     }
 
     public String getName() {

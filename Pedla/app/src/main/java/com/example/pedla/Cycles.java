@@ -59,7 +59,8 @@ public class Cycles extends AppCompatActivity implements myadapterone.OnItemClic
         modelone m=documentSnapshot.toObject(modelone.class);
         String s=m.getCycle_Name();
         String j=m.getAmount();
-        String id=documentSnapshot.getId();
+        String cycleid=documentSnapshot.getId();
+        String cyclepicurl=m.getCycle_Image();
         Toast.makeText(Cycles.this, s , Toast.LENGTH_SHORT).show();
 
         Intent intent=new Intent(Cycles.this,Accessories.class);
@@ -70,6 +71,9 @@ public class Cycles extends AppCompatActivity implements myadapterone.OnItemClic
         intent.putExtra("timetwo",time2);
         intent.putExtra("dateone",date1);
         intent.putExtra("datetwo",date2);
+        intent.putExtra("cycleimage",cyclepicurl);
+        intent.putExtra("CYLEID",cycleid);
+        intent.putExtra("STOREID",storeid);
 
 
         startActivity(intent);

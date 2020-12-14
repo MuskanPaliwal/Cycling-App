@@ -1,17 +1,35 @@
 package com.example.pedla;
 
 public class bookingmodel {
-    String Date,Time,Cycle,Store,Accessory,Amount;
+    String Date,Time,Cycle,Store,Accessory,Amount,End_Time,Cycle_Image;
+
+    public String getCycle_Image() {
+        return Cycle_Image;
+    }
+
+    public void setCycle_Image(String cycle_Image) {
+        Cycle_Image = cycle_Image;
+    }
+
+    public String getEnd_Time() {
+        return End_Time;
+    }
+
+    public void setEnd_Time(String end_Time) {
+        End_Time = end_Time;
+    }
 
     public bookingmodel() {
     }
 
-    public bookingmodel(String date, String time, String cycle, String store, String accessory, String amount) {
+    public bookingmodel(String date, String time, String cycle, String store, String accessory, String Amount,String end_time,String cycle_image) {
         Date = date;
         Time = time;
         Cycle = cycle;
         Store = store;
         Accessory = accessory;
+        End_Time=end_time;
+        Cycle_Image=cycle_image;
         Amount = amount;
     }
 

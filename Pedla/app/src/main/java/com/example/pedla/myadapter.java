@@ -6,17 +6,21 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class myadapter extends FirestoreRecyclerAdapter<model,myadapter.myviewholder>
 {
@@ -33,6 +37,7 @@ private OnListItemClicked listener;
         holder.name.setText(model.getName());
         holder.course.setText("Available Cycles: "+model.getAvailable_Cycles());
         holder.email.setText(model.getLocation());
+        Glide.with(holder.img.getContext()).load(model.getImage()).into(holder.img);
     }
 
     @NonNull
@@ -44,6 +49,7 @@ private OnListItemClicked listener;
 
     class myviewholder extends RecyclerView.ViewHolder{
         TextView name, course, email;
+        ImageView img;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +62,7 @@ private OnListItemClicked listener;
             name=(TextView)itemView.findViewById(R.id.nametext);
             course=(TextView)itemView.findViewById(R.id.coursetext);
             email=(TextView)itemView.findViewById(R.id.emailtext);
+            img=(ImageView)itemView.findViewById(R.id.storeimage);
         }
     }
 

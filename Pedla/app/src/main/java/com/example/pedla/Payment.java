@@ -28,6 +28,7 @@ public class Payment extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
     String userId;
+    String cycleimageurl, cycleid,storeid;
 
 
     @Override
@@ -50,6 +51,10 @@ public class Payment extends AppCompatActivity {
         amountaccessory=(getIntent().getStringExtra("accessoriesamount"));
         totalpayment=(getIntent().getStringExtra("totalpayment"));
 
+        cycleid=(getIntent().getStringExtra("CYCLEID"));
+        storeid=(getIntent().getStringExtra("STOREID"));
+        cycleimageurl=(getIntent().getStringExtra("cycleimage"));
+
 
         btn=findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +71,9 @@ public class Payment extends AppCompatActivity {
         Booking.put("Amount", totalpayment);
         Booking.put("Date", date1);
         Booking.put("Time", time1);
+        Booking.put("End_Time",time2);
         Booking.put("Store", getstorename);
+        Booking.put("Cycle_Image",cycleimageurl);
 
         CollectionReference collectionReference = fstore.collection("Users").document(userId).collection("Bookings");
         collectionReference.add(Booking).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -85,6 +92,9 @@ public class Payment extends AppCompatActivity {
                 intent.putExtra("accessoriesamount",amountaccessory);
                 intent.putExtra("totalpayment",totalpayment);
                 intent.putExtra("accessories",getaccessories);
+                intent.putExtra("STOREID",storeid);
+                intent.putExtra("CYCLEID",cycleid);
+                intent.putExtra("cycleimage",cycleimageurl);
 
                 startActivity(intent);
                 finish();

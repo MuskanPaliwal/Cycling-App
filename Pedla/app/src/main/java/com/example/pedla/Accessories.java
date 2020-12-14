@@ -19,6 +19,7 @@ public class Accessories extends AppCompatActivity {
     String getstorename,getcyclename, getcycleamount;
     ArrayList<String> selectedItems;
     String time1,time2,date1,date2;
+    String cycleimageurl, cycleid,storeid;
 
 
     ListView listView;
@@ -45,6 +46,10 @@ public class Accessories extends AppCompatActivity {
         time2=(getIntent().getStringExtra("timetwo"));
         date1=(getIntent().getStringExtra("dateone"));
         date2=(getIntent().getStringExtra("datetwo"));
+        cycleimageurl=(getIntent().getStringExtra("cycleimage"));
+        cycleid=(getIntent().getStringExtra("CYCLEID"));
+        storeid=(getIntent().getStringExtra("STOREID"));
+
 
         selectedItems=new ArrayList<String>();
 
@@ -105,6 +110,9 @@ public class Accessories extends AppCompatActivity {
         intent.putExtra("timetwo",time2);
         intent.putExtra("dateone",date1);
         intent.putExtra("datetwo",date2);
+        intent.putExtra("cycleimage",cycleimageurl);
+        intent.putExtra("CYCLEID",cycleid);
+        intent.putExtra("STOREID",storeid);
 
         startActivity(intent);
         finish();
