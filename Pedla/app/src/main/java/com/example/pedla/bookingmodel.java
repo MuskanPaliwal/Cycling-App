@@ -22,7 +22,7 @@ public class bookingmodel {
     public bookingmodel() {
     }
 
-    public bookingmodel(String date, String time, String cycle, String store, String accessory, String Amount,String end_time,String cycle_image) {
+    public bookingmodel(String date, String time, String cycle, String store, String accessory, String amount,String end_time,String cycle_image) {
         Date = date;
         Time = time;
         Cycle = cycle;
