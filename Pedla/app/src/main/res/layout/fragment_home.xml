@@ -16,20 +16,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/cardtrek"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardBackgroundColor="#000000"
+            >
             <TextView
                 android:id="@+id/tv_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Know the best places for trekking"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                app:fontFamily="@font/average" />
-
-
-
-
+                android:fontFamily="@font/average"
+                />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -275,7 +284,6 @@
                     android:textSize="20sp" />
 
             </LinearLayout>
-
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="match_parent"
@@ -285,12 +293,11 @@
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 app:fontFamily="@font/antic" />
-
+          
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
 
                 <EditText
                     android:id="@+id/et_time"
@@ -302,7 +309,6 @@
                     android:hint="From"
                     android:textSize="20sp" />
 
-
                 <EditText
                     android:id="@+id/et_time2"
                     android:layout_width="200dp"
@@ -312,7 +318,6 @@
                     android:layout_marginTop="10dp"
                     android:hint="To"
                     android:textSize="20sp" />
-
             </LinearLayout>
 
             <EditText
@@ -327,8 +332,6 @@
                 android:hint="Enter Your Location"
                 android:inputType="textMultiLine|textPostalAddress"
                 android:padding="16dp" />
-
-
 
             <Button
                 android:layout_width="match_parent"
@@ -479,7 +482,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
             </LinearLayout>
 
 

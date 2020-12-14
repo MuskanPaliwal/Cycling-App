@@ -28,16 +28,16 @@
         android:id = "@+id/checkable_list"
         android:layout_width = "match_parent"
         android:layout_height = "wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:divider="@android:color/black"
         android:dividerHeight="1dp">
     </ListView>
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Review Order"
-        android:layout_margin="8dp"
+        android:layout_margin="50dp"
         android:background="#fece2f"
         android:textSize="20sp"
         android:textStyle="bold"

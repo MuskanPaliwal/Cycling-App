@@ -27,9 +27,9 @@ public class bookingadapter extends FirestoreRecyclerAdapter<bookingmodel,bookin
         viewholder.t3.setText("Store: "+bookingmodel.getStore());
         viewholder.t4.setText("Cycle: "+bookingmodel.getCycle());
         viewholder.t5.setText("Accessories: "+bookingmodel.getAccessory());
-        viewholder.t6.setText("Total Amount paid: "+bookingmodel.getTotal_Amount());
         viewholder.t7.setText("End Time: "+bookingmodel.getEnd_Time());
         Glide.with(viewholder.bookedcycle.getContext()).load(bookingmodel.getCycle_Image()).into(viewholder.bookedcycle);
+        viewholder.t6.setText("Total Amount paid: "+bookingmodel.getAmount());
     }
 
     @NonNull

@@ -59,7 +59,10 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             android:id="@+id/descrip4"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
     </LinearLayout>
 
 </ScrollView>

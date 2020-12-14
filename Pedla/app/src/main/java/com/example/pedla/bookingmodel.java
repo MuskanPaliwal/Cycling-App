@@ -1,7 +1,7 @@
 package com.example.pedla;
 
 public class bookingmodel {
-    String Date,Time,Cycle,Store,Accessory,Total_Amount,End_Time,Cycle_Image;
+    String Date,Time,Cycle,Store,Accessory,Amount,End_Time,Cycle_Image;
 
     public String getCycle_Image() {
         return Cycle_Image;
@@ -22,15 +22,15 @@ public class bookingmodel {
     public bookingmodel() {
     }
 
-    public bookingmodel(String date, String time, String cycle, String store, String accessory, String total_Amount,String end_time,String cycle_image) {
+    public bookingmodel(String date, String time, String cycle, String store, String accessory, String Amount,String end_time,String cycle_image) {
         Date = date;
         Time = time;
         Cycle = cycle;
         Store = store;
         Accessory = accessory;
-        Total_Amount = total_Amount;
         End_Time=end_time;
         Cycle_Image=cycle_image;
+        Amount = amount;
     }
 
     public String getDate() {
@@ -73,11 +73,13 @@ public class bookingmodel {
         Accessory = accessory;
     }
 
-    public String getTotal_Amount() {
-        return Total_Amount;
+    public String getAmount() {
+        return Amount;
     }
 
-    public void setTotal_Amount(String total_Amount) {
-        Total_Amount = total_Amount;
+    public void setAmount(String amount) {
+        Amount = amount;
     }
+
+
 }

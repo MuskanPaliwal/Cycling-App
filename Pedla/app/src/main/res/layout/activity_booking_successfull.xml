@@ -25,7 +25,7 @@
             android:focusable="true"
             android:fontFamily="@font/average"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="Booking Successful"
+            android:text="Booking Successful !"
             android:textColor="#000000"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -192,12 +192,13 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonPay"
             android:textSize="24sp"
             android:textColor="#000000"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
             android:text="Back To Home"
             android:fontFamily="@font/average"
