@@ -38,16 +38,16 @@
             android:layout_marginLeft="10dp"
             app:cardBackgroundColor="#000000"
             >
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:text="Know best places for trekking"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:fontFamily="@font/average"
-                />
+                android:gravity="center"
+                android:text="Know best places for trekking"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
             </androidx.cardview.widget.CardView>
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -75,15 +75,15 @@
                             android:src="@drawable/bltwo" />
 
                         <TextView
+                            android:id="@+id/name1"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
-                            android:text="Badi Lake"
+                            android:fontFamily="@font/buenard"
                             android:gravity="center"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/antic"
-                            android:textStyle="bold"
+                            android:text="Badi Lake"
                             android:textColor="@color/black"
-                            android:id="@+id/name1"/>
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -100,15 +100,15 @@
                             android:src="@drawable/placetwo" />
 
                         <TextView
+                            android:id="@+id/name2"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
-                            android:text="Rani Road"
+                            android:fontFamily="@font/buenard"
                             android:gravity="center"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/antic"
-                            android:textStyle="bold"
+                            android:text="Rani Road"
                             android:textColor="@color/black"
-                            android:id="@+id/name2"/>
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -127,15 +127,15 @@
                             />
 
                         <TextView
+                            android:id="@+id/name3"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
-                            android:text="Doodh Talayi"
+                            android:fontFamily="@font/buenard"
                             android:gravity="center"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/antic"
-                            android:textStyle="bold"
+                            android:text="Doodh Talayi"
                             android:textColor="@color/black"
-                            android:id="@+id/name3"/>
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -154,15 +154,15 @@
                             />
 
                         <TextView
+                            android:id="@+id/name4"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
-                            android:text="Sajjan Garh"
+                            android:fontFamily="@font/buenard"
                             android:gravity="center"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/antic"
-                            android:textStyle="bold"
+                            android:text="Sajjan Garh"
                             android:textColor="@color/black"
-                            android:id="@+id/name4"/>
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -180,15 +180,15 @@
                             />
 
                         <TextView
+                            android:id="@+id/name5"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
-                            android:text="Govardhan Sagar"
+                            android:fontFamily="@font/buenard"
                             android:gravity="center"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/antic"
-                            android:textStyle="bold"
+                            android:text="Govardhan Sagar"
                             android:textColor="@color/black"
-                            android:id="@+id/name5"/>
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -207,15 +207,15 @@
                             />
 
                         <TextView
+                            android:id="@+id/name6"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
-                            android:text="Old City"
+                            android:fontFamily="@font/buenard"
                             android:gravity="center"
-                            android:textSize="17sp"
-                            android:fontFamily="@font/antic"
-                            android:textStyle="bold"
+                            android:text="Old City"
                             android:textColor="@color/black"
-                            android:id="@+id/name6"/>
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -242,12 +242,12 @@
                 android:id="@+id/tv_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
                 android:text="Select Date"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                app:fontFamily="@font/antic" />
+                app:fontFamily="@font/buenard" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -278,16 +278,17 @@
                     android:textSize="20sp" />
 
             </LinearLayout>
+
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
                 android:text="Select Time"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                app:fontFamily="@font/antic" />
+                app:fontFamily="@font/buenard" />
           
             <LinearLayout
                 android:layout_width="match_parent"
@@ -328,24 +329,24 @@
                 android:drawableLeft="@drawable/ic_location"
                 android:drawablePadding="16dp"
                 android:gravity="center_vertical"
-                android:hint="Enter Your Location"
+                android:hint="Enter Your Location In Udaipur"
                 android:inputType="textMultiLine|textPostalAddress"
                 android:padding="16dp" />
 
             <Button
+                android:id="@+id/btnstores"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnstores"
-                android:background="#fece2f"
-                android:text="Check-out Stores Near You"
-                android:fontFamily="@font/antic"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center"
-                android:textSize="22sp"/>
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="#fece2f"
+                android:fontFamily="@font/buenard"
+                android:text="Check-out Available Stores"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"

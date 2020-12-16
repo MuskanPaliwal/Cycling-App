@@ -18,7 +18,8 @@
             android:textColor="@color/black"
             android:layout_margin="8dp"
             android:gravity="center"
-            android:textSize="24sp"
+            android:textSize="30sp"
+            android:fontFamily="@font/average"
             android:textStyle="bold"
             />
 
@@ -59,6 +60,7 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             android:id="@+id/descrip4"
+            android:fontFamily="@font/buenard"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"

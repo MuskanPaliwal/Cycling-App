@@ -1,84 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Payment">
+    tools:context=".Payment"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginRight="140dp"
+        android:layout_margin="10dp"
         android:fontFamily="@font/average"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text=" COMPLETE YOUR PAYMENT "
+        android:text=" Complete Your Payment "
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="30sp"
+        android:layout_gravity="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="194dp"
         android:layout_height="164dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginLeft="93dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
         app:srcCompat="@drawable/pedla_qr" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="381dp"
-        android:layout_height="272dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="145dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/average"
-        android:text=' \nInstructions:- \n\n 1. Scan the QR code and pay via any UPI app. \n\n 2. You will get your "Epic Code".\n\n 3. Do mention the "Epic code" in the message of upi app.\n\n 4. We are providing this epic code way to avoid unnecessary charges of payment gateway'
+        android:text="Instructions"
         android:textColor="#000000"
+        android:textSize="24sp"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+       />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="1. Scan the QR code and pay via any UPI app. \n\n 2. You will get your Epic Code.\n\n 3. Do mention the Epic code in the message of upi app.\n\n 4. We are providing this epic code way to avoid unnecessary charges of payment gateway.\n\n 5.You can also pay cash at the store itself."
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="@font/buenard"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/button"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="630dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="161dp"
-        android:layout_marginBottom="90dp"
         android:background="#fece2f"
         android:fontFamily="@font/average"
         android:text="Confirm Booking"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
