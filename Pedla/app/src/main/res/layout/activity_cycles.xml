@@ -8,13 +8,25 @@
     tools:context=".Cycles"
     android:orientation="vertical">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="39dp"
+            android:src="@drawable/back"
+            android:layout_margin="8dp"
+            android:id="@+id/backbuttoncycles"/>
+
     <TextView
         android:id="@+id/textViewCycle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:clickable="false"
         android:drawablePadding="2dp"
         android:focusable="true"
@@ -23,10 +35,9 @@
         android:text="Available Cycles"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/recviewcycle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+         />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recviewcycle"

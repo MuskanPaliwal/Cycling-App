@@ -165,6 +165,7 @@ public class HomeFragment extends Fragment  {
         final String[] time1 = new String[1];
         final String[] time2=new String[1];
 
+
         DocumentReference documentReference=fStore.collection("Users").document(Userid);
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -272,10 +273,10 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
 
                 if (moveToStores()){
                     Intent intent =new Intent(HomeFragment.this.getActivity(),Stores.class);
-                    intent.putExtra("dateone",date1[0]);
-                    intent.putExtra("datetwo",date2[0]);
-                    intent.putExtra("timeone",time1[0]);
-                    intent.putExtra("timetwo",time2[0]);
+                    intent.putExtra("dateone",etdate.getText().toString());
+                    intent.putExtra("datetwo",etdate2.getText().toString());
+                    intent.putExtra("timeone",ettime.getText().toString());
+                    intent.putExtra("timetwo",ettime2.getText().toString());
                     startActivity(intent);
                 }
                 else{
@@ -412,12 +413,12 @@ Places.initialize(HomeFragment.this.getActivity(),"AIzaSyAIrloRRV7osj8QUUa3Kfuwz
         timeone=ettime.getText().toString().trim();
         timetwo=ettime2.getText().toString().trim();
 
+
         if(dateone.length()==0|| datetwo.length()==0|| timeone.length()==0|| timetwo.length()==0){
 
-            Toast.makeText(HomeFragment.this.getContext(), "Please fill the empty fields", Toast.LENGTH_SHORT).show();
-            return false;
+            Toast.makeText(HomeFragment.this.getContext(), "If you want to book a cycle, Please fill the empty fields", Toast.LENGTH_LONG).show();
+            return true;
         }
-
 
         return true;
     }

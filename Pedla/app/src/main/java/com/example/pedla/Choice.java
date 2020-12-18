@@ -31,7 +31,7 @@ public class Choice extends AppCompatActivity {
         merchantcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent (Choice.this,Signup.class);
+                Intent intent=new Intent (Choice.this,IfMerchant.class);
                 startActivity(intent);
                 finish();
             }

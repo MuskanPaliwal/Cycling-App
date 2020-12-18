@@ -13,36 +13,67 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Bookings"></activity>
-        <activity android:name=".Stores" />
-        <activity android:name=".OldCity" />
-        <activity android:name=".GovardhanSagar" />
-        <activity android:name=".SajjanGarh" />
-        <activity android:name=".DoodhTalayi" />
-        <activity android:name=".RaniRoad" />
-        <activity android:name=".BadiLake" />
-        <activity android:name=".AboutApp" />
-        <activity android:name=".CovidRules" />
-        <activity android:name=".BookingSuccessfull" />
-        <activity android:name=".Payment" />
-        <activity android:name=".Cycles" />
-        <activity android:name=".OrderReview" />
-        <activity android:name=".Accessories" />
+        <activity android:name=".IfMerchant"></activity>
+        <activity
+            android:name=".Bookings"
+            android:label="Bookings" />
+        <activity
+            android:name=".Stores"
+            android:label="@string/text_stores_to_sidebar"></activity>
+        <activity
+            android:name=".OldCity"
+            android:label="Old City" />
+        <activity
+            android:name=".GovardhanSagar"
+            android:label="Govardhan Sagar" />
+        <activity
+            android:name=".SajjanGarh"
+            android:label="Sajjan-Garh" />
+        <activity
+            android:name=".DoodhTalayi"
+            android:label="Doodh Talayi" />
+        <activity
+            android:name=".RaniRoad"
+            android:label="Rani-Road" />
+        <activity
+            android:name=".BadiLake"
+            android:label="Badi-Lake" />
+        <activity
+            android:name=".AboutApp"
+            android:label="About Pedla" />
+        <activity
+            android:name=".CovidRules"
+            android:label="COVID-19 Rules" />
+        <activity
+            android:name=".BookingSuccessfull"
+            android:label="Booking Successful" />
+        <activity
+            android:name=".Payment"
+            android:label="@string/text_payment_to_orderreview"></activity>
+        <activity
+            android:name=".Cycles"
+            android:label="@string/text_cycle_to_stores"></activity>
+        <activity
+            android:name=".OrderReview"
+            android:label="@string/text_orderreview_toAccessories"></activity>
+        <activity
+            android:name=".Accessories"
+            android:label="@string/text_accessories_to_cycles"></activity>
         <activity
             android:name=".SideBar"
             android:label="@string/title_activity_side_bar"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Choice"
+            android:label="Choice"
             android:theme="@style/AppTheme.RemoveActionBar" />
         <activity
-            android:name=".HS"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".Signup"
+            android:label="Signup"
             android:theme="@style/AppTheme.RemoveActionBar" />
         <activity
             android:name=".Login"
+            android:label="Login"
             android:theme="@style/AppTheme.RemoveActionBar" />
         <activity
             android:name=".MainActivity"
@@ -55,6 +86,7 @@
         </activity>
         <activity
             android:name=".Preference"
+            android:label="Settings"
             android:theme="@style/AppTheme" />
 
         <meta-data

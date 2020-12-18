@@ -25,6 +25,7 @@ public class OrderReview extends AppCompatActivity {
     String cycleimageurl, cycleid,storeid;
     ImageView cycleorderimage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class OrderReview extends AppCompatActivity {
         t6=findViewById(R.id.startdate);
         t7=findViewById(R.id.timings);
         cycleorderimage=findViewById(R.id.cycleoreder);
+
 
         getcycle=getIntent().getStringExtra("cyclename");
         getcycleamounnt=getIntent().getStringExtra("cycleamount");
@@ -78,6 +80,8 @@ public class OrderReview extends AppCompatActivity {
                 goToPaymentPage();
             }
         });
+
+
     }
     private void goToPaymentPage(){
         Intent intent=new Intent (OrderReview.this,Payment.class);

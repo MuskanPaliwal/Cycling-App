@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IfMerchant"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Direct Registrations for Merchant is opening soon."
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/antic"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="For now, if you want to get your Cycle Store registered at Pedla:"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/average"
+        android:textSize="24sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="a. Drop a mail id at: pedla07@gmail.com"
+        android:layout_margin="6dp"
+
+        android:textColor="@color/black"
+        android:fontFamily="@font/average"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="b. Contact us:  +919511575047"
+        android:layout_margin="6dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/average"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/backtochoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="#fece2f"
+        android:text="Go Back"
+        android:textColor="@color/black"
+        android:fontFamily="@font/buenard"
+        android:textStyle="bold"
+        android:textSize="19sp"/>
+
+</LinearLayout>

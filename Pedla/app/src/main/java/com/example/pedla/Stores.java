@@ -2,12 +2,15 @@ package com.example.pedla;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pedla.ui.home.HomeFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -16,6 +19,7 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
     RecyclerView recview;
     myadapter adapter;
     String time1,time2,date1,date2;
+
    
 
     @Override
@@ -29,6 +33,7 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
 
 
 
+
         setContentView(R.layout.activity_stores);
         recview=findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
@@ -39,6 +44,7 @@ public class Stores extends AppCompatActivity implements myadapter.OnListItemCli
                 .build();
         adapter=new myadapter(options,this);
         recview.setAdapter(adapter);
+
 
     }
 

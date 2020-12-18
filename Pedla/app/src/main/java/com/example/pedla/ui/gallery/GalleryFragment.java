@@ -14,7 +14,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pedla.Choice;
-import com.example.pedla.HS;
 import com.example.pedla.Login;
 import com.example.pedla.Preference;
 import com.example.pedla.R;

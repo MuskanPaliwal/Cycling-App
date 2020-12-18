@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class Payment extends AppCompatActivity {
     FirebaseFirestore fstore;
     String userId;
     String cycleimageurl, cycleid,storeid;
+
 
 
     @Override
@@ -56,6 +58,7 @@ public class Payment extends AppCompatActivity {
         cycleimageurl=(getIntent().getStringExtra("cycleimage"));
 
 
+
         btn=findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +66,7 @@ public class Payment extends AppCompatActivity {
                 moveToBookSuccessfull();
             }
         });
+
     }
     public void moveToBookSuccessfull(){
         Map<String, Object> Booking = new HashMap<>();
