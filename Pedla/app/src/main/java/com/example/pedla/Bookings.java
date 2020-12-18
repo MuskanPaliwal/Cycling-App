@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 public class Bookings extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class Bookings extends AppCompatActivity {
 
         FirestoreRecyclerOptions<bookingmodel> options=
                 new FirestoreRecyclerOptions.Builder<bookingmodel>()
-                        .setQuery(FirebaseFirestore.getInstance().collection("Users").document(Userid).collection("Bookings"),bookingmodel.class)
+                        .setQuery(FirebaseFirestore.getInstance().collection("Users").document(Userid).collection("Bookings").orderBy("Date", Query.Direction.DESCENDING),bookingmodel.class)
                         .build();
 
         adapter=new bookingadapter(options);

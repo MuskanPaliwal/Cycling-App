@@ -18,8 +18,9 @@
             android:textColor="@color/black"
             android:layout_margin="8dp"
             android:gravity="center"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold"
+            android:fontFamily="@font/average"
             />
 
         <ImageView
@@ -59,6 +60,7 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             android:id="@+id/descrip1"
+            android:fontFamily="@font/buenard"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"

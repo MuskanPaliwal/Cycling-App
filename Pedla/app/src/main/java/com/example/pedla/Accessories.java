@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public class Accessories extends AppCompatActivity {
     ArrayList<String> selectedItems;
     String time1,time2,date1,date2;
     String cycleimageurl, cycleid,storeid;
+    
 
 
     ListView listView;
@@ -49,6 +51,7 @@ public class Accessories extends AppCompatActivity {
         cycleimageurl=(getIntent().getStringExtra("cycleimage"));
         cycleid=(getIntent().getStringExtra("CYCLEID"));
         storeid=(getIntent().getStringExtra("STOREID"));
+
 
 
         selectedItems=new ArrayList<String>();
@@ -86,13 +89,15 @@ public class Accessories extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();*/
             }
         });
+
+
     }
 
 
     private void goToReviewOrder(View view){
         String selItems="";
         for(String item:selectedItems){
-            if(selItems== ""){
+            if(selItems==""){
                 selItems=item;
             }
             else{

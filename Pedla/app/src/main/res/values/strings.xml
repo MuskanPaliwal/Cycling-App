@@ -16,6 +16,11 @@
     <string name="title_activity_nav_bar_side">NavBarSide</string>
     <string name="title_activity_side_bar">SideBar</string>
     <string name="add_accessories">Add Accessories</string>
+    <string name="text_stores_to_sidebar">Stores</string>
+    <string name="text_cycle_to_stores">Cycles</string>
+    <string name="text_accessories_to_cycles">Accessories</string>
+    <string name="text_orderreview_toAccessories">Order-Review</string>
+    <string name="text_payment_to_orderreview">Payment</string>
 
 
 </resources>
